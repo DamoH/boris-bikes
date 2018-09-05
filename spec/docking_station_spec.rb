@@ -15,6 +15,6 @@ describe DockingStation do
 
   it 'has docked bikes' do
     bike = subject.release_bike
-    expect(subject.docked)
+    expect(subject.bike)
   end
 end
