@@ -7,3 +7,4 @@ station = DockingStation.new
 bike = station.release_bike
 bike.working?
 station.dock(bike)
+station.docked
