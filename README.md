@@ -5,5 +5,4 @@ irb>
 require './lib/docking_station.rb'
 station = DockingStation.new
 bike = Bike.new
-station.dock(bike)
-station.dock(bike)
+21.times { station.dock bike }
