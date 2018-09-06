@@ -1,4 +1,4 @@
-require_relative 'bike'
+require_relative './bike'
 
 class DockingStation
 
@@ -9,14 +9,24 @@ class DockingStation
   end
 
   def release_bike
-    fail("No bike available") unless @bikes.length > 0
+    fail("No bike available") if empty?
     @bikes.pop
   end
 
   def dock(bike)
-    fail("Docking Station Full") if @bikes.length >= 20
+    fail("Docking Station Full") if full?
     @bikes.push(bike)
     "Dock successful"
+  end
+
+  private
+
+  def full?
+    @bikes.length >= 20 ? true : false
+  end
+
+  def empty?
+    @bikes.length == 0 ? true : false
   end
 
 end
