@@ -19,9 +19,19 @@ describe DockingStation do
     expect(subject.dock(bike)).to eq ("Dock successful")
   end
 
-  it 'has docked bikes' do
+  it "tests whether or not a bike is broken" do
     bike = Bike.new
-    expect(subject.bikes)
+    expect(subject.working_broken).to eq (bike.broken?)
+  end
+
+  it 'has docked working bikes' do
+    bike = Bike.new
+    expect(subject.working_bikes)
+  end
+
+  it 'has docked broken bikes' do
+    bike = Bike.new
+    expect(subject.broken_bikes)
   end
 
   it 'doesnt allow docking if full' do
