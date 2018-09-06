@@ -16,15 +16,10 @@ class DockingStation
     @bikes.pop
   end
 
-  def dock(bike, broken)
+  def dock(bike)
     fail("Docking Station Full") if full?
-    if broken == "No"
-      @bikes.push(bike)
-      "Dock successful"
-    else
-      @bikes.push(bike)
-      "Thanks, I've made a note"
-    end
+    @bikes.push(bike)
+    "Dock successful"
   end
 
   private
